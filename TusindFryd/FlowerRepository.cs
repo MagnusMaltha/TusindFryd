@@ -13,7 +13,7 @@ namespace TusindFryd
         StreamReader reader;
 
         public Flower flower { get; set; }
-
+        
         private List<Flower> flowers = new List<Flower>();
 
         public void AddFlower(Flower flower)
@@ -21,15 +21,17 @@ namespace TusindFryd
             flowers.Add(flower);
             
         }
-        public Flower GetFlower(string id)
+
+        public void Save()
         {
-            foreach (Flower flower in flowers) 
+            writer = new StreamWriter("TusindfrydBlomster.txt");
+            foreach (Flower flower in flowers)
             {
-                if (flower.Name == id) ;
-                break;
+                writer.WriteLine(flower.ToString());
             }
-            return flower;
+            writer.Close();
         }
+     
         public int Count { get { return flowers.Count; } }
 
     

@@ -8,28 +8,32 @@ namespace TusindFryd
 {
     public class Controller
     {
-        public FlowerRepository FlowerRepository { get; set; }
+        public FlowerRepository flowerRepository;
         public Controller() { }
         public void NewFlower()
         {
             Console.WriteLine("New Flower");
             Console.WriteLine("Name");
-            string flowerName = Console.ReadLine();
+            string flowerName = "blomst";//Console.ReadLine();
             Console.WriteLine("Production");
-            string flowerProductionTime = Console.ReadLine();
+            string flowerProductionTime = "20";// Console.ReadLine();
             Console.WriteLine("HalfLife");
-            string flowerHalfLife = Console.ReadLine();
+            string flowerHalfLife = "150";// Console.ReadLine();
             Console.WriteLine("size");
-            string flowerSizem2 = Console.ReadLine();
+            string flowerSizem2 = "0,5";// Console.ReadLine();
             Console.WriteLine("Picture");
-            string flowerPicture = Console.ReadLine();
+            string flowerPicture = "Image1";// Console.ReadLine();
 
-            Flower flower = new Flower(flowerName, int.Parse(flowerProductionTime), int.Parse(flowerHalfLife), double.Parse(flowerSizem2), flowerPicture);
-            Console.WriteLine(flower);
+            flowerRepository.AddFlower(new Flower(flowerName, int.Parse(flowerProductionTime), int.Parse(flowerHalfLife), double.Parse(flowerSizem2), flowerPicture));
+            
+            //Console.WriteLine(flower);
+           
+            //flowerRepository.AddFlower(flower);
+
         }
         public void AddFlowerToList(Flower flower) 
         {
-            FlowerRepository.AddFlower(flower);
+            flowerRepository.AddFlower(flower);
         }
     }
 }

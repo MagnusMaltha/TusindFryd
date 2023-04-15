@@ -7,23 +7,23 @@ namespace TusindFryd
         static void Main(string[] args)
         {
             Menu menu = new Menu();
-            menu.ShowMenu();
-
-            
-            //Controller controller = new Controller();
-            //Console.WriteLine("Name");
-            //string flowerName = Console.ReadLine();
-            //Console.WriteLine("Production");
-            //string flowerProductionTime = Console.ReadLine();
-            //Console.WriteLine("HalfLife");
-            //string flowerHalfLife = Console.ReadLine();
-            //Console.WriteLine("size");
-            //string flowerSizem2 = Console.ReadLine();
-            //Console.WriteLine("Picture");
-            //string flowerPicture = Console.ReadLine();
-
-            //Flower flower = new Flower(flowerName, int.Parse(flowerProductionTime), int.Parse(flowerHalfLife), double.Parse(flowerSizem2), flowerPicture);
-            //Console.WriteLine(flower);
+            Controller controller = new Controller();
+            FlowerRepository flowerRepository = new FlowerRepository();
+            //menu.ShowMenu();
+            //controller.NewFlower();
+            Console.WriteLine("New Flower");
+            Console.WriteLine("Name");
+            string flowerName = "blomst";//Console.ReadLine();
+            Console.WriteLine("Production");
+            string flowerProductionTime = "20";// Console.ReadLine();
+            Console.WriteLine("HalfLife");
+            string flowerHalfLife = "150";// Console.ReadLine();
+            Console.WriteLine("size");
+            string flowerSizem2 = "0,5";// Console.ReadLine();
+            Console.WriteLine("Picture");
+            string flowerPicture = "Image1";// Console.ReadLine();
+            flowerRepository.AddFlower(new Flower(flowerName, int.Parse(flowerProductionTime), int.Parse(flowerHalfLife), double.Parse(flowerSizem2), flowerPicture));
+            flowerRepository.Save();
         }
     }
 }
