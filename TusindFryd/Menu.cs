@@ -24,7 +24,7 @@ namespace TusindFryd
                 Console.WriteLine("1"); 
                 controller.NewFlower(); 
             }
-            void handleSecond() { Console.WriteLine("2"); }
+            void handleSecond() { Console.WriteLine("2"); ShowMenu(); }
             void handleThird() { Console.WriteLine("3"); }
             void handleFourth() { Console.WriteLine("4"); }
             void handleFifth() { Console.WriteLine("5"); }
