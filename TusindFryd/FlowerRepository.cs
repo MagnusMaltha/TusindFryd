@@ -7,6 +7,7 @@ using System.IO;
 
 namespace TusindFryd
 {
+    
     public class FlowerRepository
     {
         StreamWriter writer;
@@ -24,12 +25,26 @@ namespace TusindFryd
 
         public void Save()
         {
-            writer = new StreamWriter("TusindfrydBlomster.txt");
+            writer = new StreamWriter("TusindfrydBlomster.txt", append: true);
             foreach (Flower flower in flowers)
             {
                 writer.WriteLine(flower.ToString());
             }
             writer.Close();
+        }
+        public void load()
+        {
+            reader = new StreamReader("TusindfrydBlomster.txt");
+            int counter = 0;
+            string ln;
+
+            while ((ln = reader.ReadLine()) != null)
+            {
+                Console.WriteLine(ln);
+                counter++;
+            }
+            reader.Close();
+
         }
      
         public int Count { get { return flowers.Count; } }

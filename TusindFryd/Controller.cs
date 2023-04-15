@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace TusindFryd
 {
+    
     public class Controller
     {
-        public FlowerRepository flowerRepository;
+        
+        FlowerRepository flowerRepository = new FlowerRepository();
         public Controller() { }
         public void NewFlower()
         {
@@ -25,9 +27,11 @@ namespace TusindFryd
             string flowerPicture = "Image1";// Console.ReadLine();
 
             flowerRepository.AddFlower(new Flower(flowerName, int.Parse(flowerProductionTime), int.Parse(flowerHalfLife), double.Parse(flowerSizem2), flowerPicture));
+            flowerRepository.Save();
             
+
             //Console.WriteLine(flower);
-           
+
             //flowerRepository.AddFlower(flower);
 
         }
